@@ -39,7 +39,7 @@ public class ThreadPool {
 
 
 	public void execute(Runnable runnable) throws InterruptedException {
-		Thread.sleep((long) (Math.random() * 100));
+		Thread.sleep((long) (100));
 		threadPoolExecutor.execute(runnable);
 	}
 

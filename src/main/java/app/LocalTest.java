@@ -11,15 +11,11 @@ public class LocalTest extends ThreadPool {
 		FormatServiceImpl formatService = new FormatServiceImpl();
 		ThreadPool threadPool = new ThreadPool();
 //		Session session = formatService.sshLogin("127.0.0.1", "40", "root", "000000");
-		Session session = formatService.sshLogin("192.168.8.197", "40", "root", "000000");
+		Session session = formatService.sshLogin("192.168.3.34", "40", "root", "000000");
 		if (session != null) {
 			for (int index = 0; index < 100000; index++) {
 				threadPool.execute(new ThreadWorker(formatService, session, index));
 //				formatService.doCommand(session);
-//				if (i % 1000 == 0 && i != 0) {
-//					System.out.println(i);
-//					formatService.SystemMemoryTotal();
-//				}
 			}
 			session.disconnect();
 		}
@@ -40,7 +36,8 @@ public class LocalTest extends ThreadPool {
 		public void run() {
 			try {
 				formatService.doCommand(session);
-				if (index % 1000 == 0 ) {
+				System.out.println(index);
+				if (index % 1000 == 0) {
 					formatService.SystemMemoryTotal();
 				}
 			} catch (Exception e) {

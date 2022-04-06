@@ -27,7 +27,6 @@ public class LogFormat {
 			for (int i = 0; i < 100000; i++) {
 				formatService.doCommand(session);
 				if (i % 1000 == 0 && i != 0) {
-					System.out.println(i);
 					formatService.SystemMemoryTotal();
 				}
 			}
