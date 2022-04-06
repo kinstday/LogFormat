@@ -3,6 +3,9 @@ package app;
 
 import java.io.*;
 
+/**
+ * 生成测试日志文件
+ */
 public class CreateLog {
 
 	final private static String CHARSET_CN = "GB18030";

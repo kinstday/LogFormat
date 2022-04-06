@@ -81,7 +81,7 @@ public class FormatServiceImpl implements FormatService {
 						context.addOtherNumber();
 					}
 					if (context.getEnd() == context.getRes().length() - 1) {
-						remain = checkRemainByte(context, buf, CHARSET);
+						remain = checkRemainByte(context, buf);
 						split = context.getSplit();
 						readAll = false;
 					} else {
@@ -146,7 +146,7 @@ public class FormatServiceImpl implements FormatService {
 		context.setSplit(1);
 	}
 
-	private byte[] checkRemainByte(Context context, byte[] buf, String CHARSET) throws UnsupportedEncodingException {
+	private byte[] checkRemainByte(Context context, byte[] buf) throws UnsupportedEncodingException {
 
 		int len = buf.length-context.getPassNumber();
 		byte [] ans = new byte[len];

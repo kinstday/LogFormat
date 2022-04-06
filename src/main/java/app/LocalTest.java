@@ -5,6 +5,9 @@ import com.jcraft.jsch.Session;
 import common.ThreadPool;
 import service.impl.FormatServiceImpl;
 
+/**
+ * 本地测试
+ */
 public class LocalTest extends ThreadPool {
 
 	public static void main(String[] args) throws JSchException, InterruptedException {
